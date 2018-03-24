@@ -3,11 +3,14 @@
 }
 
 #names {
-    text-align: right;
+    font-family: serif;
 }
 
+#menu {
+  position: fixed;
+}
 .App-logo {
-  animation: App-logo-spin infinite 3s linear;
+  animation: App-logo-spin infinite 7s linear;
   height: 80px;
 }
 /*
@@ -27,12 +30,14 @@
 }
 
 #titles {
-  color: white;
-  font-size: 3em;
+  color: black;
+  font-size: 4em;
+  font-family: serif;
 }
 #titles2 {
   color: black;
-  font-size: 3em;
+  font-size: 4em;
+  font-family: serif;
 }
 #par0 {
   color: white;
@@ -65,19 +70,50 @@
   background-attachment: fixed;
 }
 #divchart {
-  margin: 0 auto;
-  width: 70%;
+  float: left;
+  margin-left: 50px;
+  width: 782px;
   height: 600px;
   background-color: #FDEAD9;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 18px;
+  border: 1px solid #000000;
 }
 
 #divchart:hover {
-  margin: 0 auto;
-  width: 70%;
+  float: left;
+  margin-left: 50px;
+  width: 782px;
   height: 600px;
   background-color: #FEDEC2;
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+  border: 1px solid #000000;
+}
+#contentChart {
+  float: right;
+  border-radius: 18px;
+  margin-right: 50px;
+  padding: 40px;
+  width: 30%;
+  height: 600px;
+  background-color: #FFF9F3;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 20px;
+}
+
+#contentChart:hover {
+  float: right;
+  margin-right: 50px;
+  padding: 40px;
+  width: 30%;
+  height: 600px;
+  background-color: #FDEAD9;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 20px;
+}
+.clarify {
+  clear: both;
 }
 /*
 .form {
@@ -118,7 +154,7 @@
     width: 600px;
     background-color: #9169BF;
     border: none;
-    border-radius: 7px;
+    border-radius: 20px;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: white;
     padding: 15px 32px;
@@ -131,7 +167,7 @@
     width: 610px;
     background-color: #29B6C9;
     border: 1px solid #29B6C9;
-    border-radius: 7px;
+    border-radius: 20px;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: white;
     padding: 15px 32px;
