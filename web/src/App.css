@@ -1,0 +1,119 @@
+.App {
+  text-align: center;
+}
+
+#names {
+    text-align: right;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 3s linear;
+  height: 80px;
+}
+/*
+.App-header {
+  background-image: url('./sky-bridge.jpg');
+  height: 320px;  
+  padding: 30px;
+  color: white;
+}
+*/
+.App-title {
+  font-size: 6em;
+}
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+#titles {
+  color: white;
+  font-size: 3em;
+}
+#par0 {
+  color: white;
+  height: 120vh;
+  width: 100%;
+  background-image: url('./city2.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+#par1 {
+  height: 100vh;
+  width: 100%;
+  background-image: url('./girl.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+#par2 {
+  height: 100vh;
+  width: 100%;
+  background-image: url('./city-landscape.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+/*
+.form {
+  margin: 0 auto;
+  width: 70%;
+  height: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+*/
+.form2 {
+  margin: 0 auto;
+  width: 35%;
+  height: 450px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-image: url('./chart.png');
+}
+
+#textarea {
+  border: 2px solid #000000;
+  border-radius: 8px;
+  font-size: 17px;
+  margin: 30px;
+  width: 80%;
+  height: 150%;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#textarea:hover {
+  border: 2px solid #1FEACE;
+  border-radius: 8px;
+  font-size: 17px;
+  margin: 30px;
+  width: 80%;
+  height: 150%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button {
+    width: 600px;
+    background-color: #3F75B7;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.button:hover {
+    width: 610px;
+    background-color: #29B6C9;
+    border: 1px solid #29B6C9;
+    border-radius: 7px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
