@@ -1,0 +1,22 @@
+{
+  "name": "scmp",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000S\u0000C\u0000M\u0000P\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hank0982/SCMP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hank0982/SCMP/issues"
+  },
+  "homepage": "https://github.com/hank0982/SCMP#readme",
+  "dependencies": {
+    "word2vec": "^1.1.2"
+  }
+}
