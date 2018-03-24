@@ -30,6 +30,10 @@
   color: white;
   font-size: 3em;
 }
+#titles2 {
+  color: black;
+  font-size: 3em;
+}
 #par0 {
   color: white;
   height: 120vh;
@@ -45,12 +49,35 @@
   background-size: cover;
   background-attachment: fixed;
 }
+
 #par2 {
   height: 100vh;
   width: 100%;
-  background-image: url('./city-landscape.jpeg');
+  background-image: url('./city3.jpeg');
   background-size: cover;
   background-attachment: fixed;
+}
+#par3 {
+  height: 100vh;
+  width: 100%;
+  background-image: url('./girl.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+#divchart {
+  margin: 0 auto;
+  width: 70%;
+  height: 600px;
+  background-color: #FDEAD9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#divchart:hover {
+  margin: 0 auto;
+  width: 70%;
+  height: 600px;
+  background-color: #FEDEC2;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 /*
 .form {
@@ -79,7 +106,7 @@
 }
 
 #textarea:hover {
-  border: 2px solid #1FEACE;
+  border: 3px solid #1FEACE;
   border-radius: 8px;
   font-size: 17px;
   margin: 30px;
@@ -89,7 +116,7 @@
 }
 .button {
     width: 600px;
-    background-color: #3F75B7;
+    background-color: #9169BF;
     border: none;
     border-radius: 7px;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -98,7 +125,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
 }
 .button:hover {
     width: 610px;
@@ -111,7 +138,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
