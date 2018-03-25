@@ -3,6 +3,11 @@ import logo from './logo.svg';
 // import logo from './pen.png';
 import './App.css';
 import { Menu } from 'semantic-ui-react'
+import GoogleTrend from './google_trend'
+import { Loader } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
+import { Dimmer, Image, Segment } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 const data = [
@@ -12,21 +17,32 @@ const data = [
       {name: 'Page D', uv: 2780, pv: 3908, amt: 2000},
       {name: 'Page E', uv: 1890, pv: 4800, amt: 2181},
       {name: 'Page F', uv: 2390, pv: 3800, amt: 2500},
-      {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
+      {name: 'Page G', uv: 3490, pv: 4300, amt: 2100}
 ];
-
-
-
 
 
 class App extends Component {
   constructor(prop){
     super(prop);
     this.state= {
-      activeItem: 'editorials'
+      activeItem: 'editorials',
+      inputVal: '',
+      prediction: '',
+      submitOn:false
     }
   }
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleInputChange = (e) => this.setState({ inputVal: e.target.value })
+  handleSubmit = (e) => {
+    e.preventDefault(); 
+    this.setState({
+      submitOn:true
+    })
+    console.log('Submit: ' + this.state.inputVal);
+    fetch('http://localhost:3001', { method: 'POST', body: this.state.inputVal })
+	    .then(res => res.json())
+	    .then(json => this.setState({prediction: json['res']}))//; console.log(json));
+  }
 
   render() {
     const { activeItem } = this.state
@@ -77,37 +93,57 @@ class App extends Component {
           <div id="par1">
               <br/>
               <h2 id="titles">Data Analysis</h2>
-              <div className="form">
-                  <form>
-                    <textarea placeholder="Paste data here:" rows="10" cols="100" id="textarea"></textarea>
-                    <div>
-                      <button className="button">Get Analysis Chart</button>
-                    </div>
-                  </form>
-              </div>
+              
+              {
+                this.state.prediction ?
+                <Grid centered columns={2}>
+                <Grid.Column>
+                <Card centered>
+                  <Card.Content
+                    header='The prediction based on the text'
+                    description={this.state.prediction}
+                  />
+                </Card>
+                </Grid.Column>
+                </Grid>
+                
+                : 
+                this.state.submitOn ? 
+                <Segment className="form" style={{height: 500}}>
+                <Dimmer active page={false}>
+                  <Loader size='large'>Loading</Loader>
+                </Dimmer>
+                </Segment>
+                 :
+                <div className="form">
+                    <form onSubmit={this.handleSubmit}>
+                      <textarea onChange={this.handleInputChange} placeholder="Paste article here:" rows="10" cols="100" id="article"></textarea>
+                      <div>
+                        <button className="button">Get Analysis Chart</button>
+                      </div>
+                    </form>
+                </div>
+                
+              }
+              
           </div>
 
           <div id="par2">
             <br/>
              <h2 id="titles2">Analysis Chart</h2>
+                
                   <div id="divchart">
-                    <BarChart width={700} height={500} data={data}
-                    margin={{top: 50, right: 5, left: 20, bottom: 5}}>
-                        <XAxis dataKey="name"/>
-                        <YAxis/>
-                          <CartesianGrid strokeDasharray="3 3"/>
-                        <Tooltip/>
-                        <Legend />
-                        <Bar dataKey="pv" fill="#4A86F0" />
-                        <Bar dataKey="uv" fill="#91EA1F" />
-                    </BarChart>
+                    <GoogleTrend/>
                   </div>
+
                   <div id="contentChart">
                     <p>
-                      Lorem ipsum dolor sit amet, eos nisl postulant no. Nec te timeam suscipit, laudem ceteros principes at sea. Te eum solet iuvaret, aeterno aliquam contentiones ius et. Sed pertinax adolescens ad, mel no nibh iudico, solum elitr definitiones vis ex.
+                    <br/>
+                      It is a platform that helps those who work in the newsroom brainstorm some ideas that related to the news, see what is popular, and get the best and most related keywords.
 <br/>
 <br/>
-Nam decore molestie ut. Sea ei congue prompta, quodsi euismod sensibus est ei, ipsum erroribus his an. Has id eligendi urbanitas, elitr iracundia ex vix. Meliore reprehendunt conclusionemque in his. Maiorum signiferumque eu vel, sit ad veniam audire mediocrem. Sit in populo regione mentitum, quod idque euismod mel et.
+<br/>
+                      Simply input the words that you might want to modify and the smart machine will tell you what is the trend, what is searched the most, and the flow of the trend. Try it out!
                     </p>
                   </div>
             <div className="clarify"></div>
